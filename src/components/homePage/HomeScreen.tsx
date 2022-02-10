@@ -5,13 +5,11 @@ import { SportsCards } from './SportsCards'
 
 export const HomeScreen = () => {
 
-    const [dataSports, setDataSports] = useState([])
 
     const dispatch = useDispatch()
     const {sports} = useSelector((state:any) => state.sports)
     useEffect(() => {
         dispatch(sportsStartLoading())
-        setDataSports(sports)
       }, [])
     
     

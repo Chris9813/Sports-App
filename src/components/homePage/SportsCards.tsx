@@ -9,7 +9,6 @@ export const SportsCards = ({dataSports}:any) => {
     const dispatch = useDispatch()
  
     const {idSport, strSport, strSportDescription, strSportIconGreen, strSportThumb} = dataSports;
-    console.log(idSport, strSport, strSportDescription, strSportIconGreen, strSportThumb)
     
     const handleClick = (idSport:number) => {
         if(!favorites.includes(idSport)){
