@@ -5,6 +5,7 @@ export const types = {
     logout:  "[auth] logout",
 
     sportsLoaded: "[Sports] Loaded Sports",
-    SportsAdd: "[Sports] Add Favorite New Sport"
+    SportsAdd: "[Sports] Add Favorite New Sport",
+    SportsDelete: "[Sports] Delete Favorite Sport"
 
 }

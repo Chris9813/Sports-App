@@ -1,15 +1,16 @@
 import { types } from "../types/types";
 
 const initialState = {
-  sport: [],
+  favorites:[],
 };
 
 export const sportsReducer = (state = initialState, action:any) => {
   switch (action.type) {
     case types.SportsAdd:
+      
       return {
         ...state,
-        sports: [action.payload, ...state.sport],
+        favorites: [action.payload, ...state.favorites],
       };
 
     case types.sportsLoaded:
@@ -17,6 +18,12 @@ export const sportsReducer = (state = initialState, action:any) => {
         ...state,
         sports: [...action.payload],
       };
+    
+    case types.SportsDelete:
+      return {
+        ...state,
+        favorites: state.favorites.filter((e:any) => e !== action.payload),
+      }
 
     default:
       return state;
