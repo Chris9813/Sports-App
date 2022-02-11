@@ -19,9 +19,9 @@ class Like extends Component {
             onClick={() => this.toggle()}
           >
             {this.state.liked === false ? (
-              <i className="fa-regular fa-heart"></i>
+              <i className="fa-regular fa-heart fa-xl"></i>
             ) : (
-                <i className="fa-solid fa-heart"></i>
+                <i className="fa-solid fa-heart fa-xl"></i>
             )}
           </div>
         </div>

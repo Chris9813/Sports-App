@@ -28,20 +28,17 @@ export const SportsCards = ({dataSports}:tableArgs) => {
     }
 
     const handleSport = (idSport:number) => {
-      history.push(`/homepage/${idSport}`)
+      history.push(`./homepage/${idSport}`)
     }
     
 
-  return ( <div className="card align-content-center my-3 mx-4">
+  return ( <div className="align-content-center my-3 mx-4">
         <div className="card">
-          <img src={strSportThumb} className="card-img-top" alt="..."/>
+          <img src={strSportThumb} className="card-img-top" alt="..." style={{height: "10rem"}}/>
           <div className="card-body">
-            <h5  onClick={() => handleSport(idSport)} className="card-title">{strSport}</h5>
+            <h5 style={{cursor: "pointer"}}  onClick={() => handleSport(idSport)} className="card-title">{strSport}</h5>
             <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
             <p onClick={() => handleClick(idSport)} className='mx-4'><Like /></p>
-            <Link to={`./homepage/${idSport}`}>
-                Mas...
-            </Link>
           </div>
         </div>
       </div>

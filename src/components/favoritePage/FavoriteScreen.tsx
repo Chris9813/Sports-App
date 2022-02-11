@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { sportsStartLoading } from '../../actions/sports'
 import { getterById } from '../../getters/getterById'
@@ -16,7 +16,7 @@ export const FavoriteScreen = () => {
       dispatch(sportsStartLoading())
     }, [])
 
-    const data = getterById(sports,favorites)
+    const data = useMemo(() => getterById(sports,favorites), [sports,favorites])
     
 
     console.log(data)
