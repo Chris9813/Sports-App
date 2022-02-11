@@ -1,6 +1,13 @@
+import { actionInter } from "../interfaces/interfaces";
 import { types } from "../types/types";
 
-export const authReducer = (state = {}, action:any) => {
+
+type actionAuth = {
+  uid: number,
+  displayname: string,
+}
+
+export const authReducer = (state = {}, action:actionInter) => {
   switch (action.type) {
     case types.login:
       return {

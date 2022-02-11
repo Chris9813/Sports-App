@@ -1,6 +1,6 @@
 const baseUrl = "https://www.thesportsdb.com/api/v1/json/2/all_sports.php";
 
-const fetchSinToken = (endPoint:string, data:any, method = "GET") => {
+const fetchSinToken = (endPoint:string, data:Object, method = "GET") => {
   const url = `${baseUrl}/${endPoint}`; //localhost:4000/api/endpoint
 
   if (method === "GET") {

@@ -4,7 +4,12 @@ const initialState = {
   favorites:[],
 };
 
-export const sportsReducer = (state = initialState, action:any) => {
+interface actionInter {
+  type: string,
+  payload: never[],
+}
+
+export const sportsReducer = (state = initialState, action:actionInter) => {
   switch (action.type) {
     case types.SportsAdd:
       

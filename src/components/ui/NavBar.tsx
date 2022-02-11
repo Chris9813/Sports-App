@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom'
 import { startLogout } from '../../actions/auth';
 import App from '../../App';
+import { stateInter } from '../../interfaces/interfaces';
 
 
 export const Navbar = () => {
 
     const dispatch = useDispatch()
-    const {name} = useSelector((state:any) => state.auth)
+    const {name} = useSelector((state:stateInter) => state.auth)
 
 
     function handleLogout() {

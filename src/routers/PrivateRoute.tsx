@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router'
 
 type typeArgs = {
 
-    isAuthenticated: any,
+    isAuthenticated: Boolean,
     component: any,
 }
 

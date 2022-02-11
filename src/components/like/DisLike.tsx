@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class Like extends Component {
+class DisLike extends Component {
   state = { liked: false };
   toggle = () => {
     let localLiked = this.state.liked;
@@ -19,9 +19,9 @@ class Like extends Component {
             onClick={() => this.toggle()}
           >
             {this.state.liked === false ? (
-              <i className="fa-regular fa-heart"></i>
+              <i className="fa-solid fa-heart"></i>
             ) : (
-                <i className="fa-solid fa-heart"></i>
+                <i className="fa-regular fa-heart"></i>
             )}
           </div>
         </div>
@@ -30,4 +30,4 @@ class Like extends Component {
   }
 }
   
-export default Like;
+export default DisLike;
