@@ -23,10 +23,10 @@ export const SportScreen = () => {
 
 
   return (
-    <div className='continer'>
+    <div className='continer animate__animated animate__fadeInUpBig'>
     {
-      data.map((item:DataSports) => {
-      return <Cards dataSports={item} />
+      data.map((item:DataSports, i:number) => {
+      return <Cards dataSports={item} key={i} />
     })
   }
   </div>

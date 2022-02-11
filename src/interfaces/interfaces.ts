@@ -30,3 +30,9 @@ export interface actionInter {
     type: string,
     payload: actionAuth
   }
+
+  export interface favorites {
+    name: string,
+    url: string,
+    id: string,
+  }

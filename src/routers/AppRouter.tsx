@@ -35,7 +35,7 @@ export const AppRouter = () => {
             }
             setchecking(false)
         })
-    }, [dispatch, setchecking, setisLoggedIn, setFavorite])
+    }, [dispatch, setchecking, setisLoggedIn, setFavorite, loadFavorites])
 
 
 if(checking) {

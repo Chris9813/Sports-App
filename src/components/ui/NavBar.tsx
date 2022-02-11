@@ -35,7 +35,7 @@ export const Navbar = () => {
                         exact
                         to="/homepage"
                     >
-                        HomePage
+                        Home
                     </NavLink>
 
                     <NavLink 
@@ -44,7 +44,7 @@ export const Navbar = () => {
                         exact
                         to="/favorites"
                     >
-                        Favorites
+                        History
                     </NavLink>
             </div>
             </div>

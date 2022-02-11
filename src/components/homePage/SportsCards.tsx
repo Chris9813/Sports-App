@@ -23,15 +23,11 @@ export const SportsCards = ({dataSports}:tableArgs) => {
     const dispatch = useDispatch()
     const history = useHistory()
  
-    const {idSport, strSport, strSportDescription, strSportIconGreen, strSportThumb} = dataSports;
+    const {idSport, strSport, strSportThumb} = dataSports;
     
-    const handleClick = (idSport:number) => {
-        if(!favorites.includes(idSport)){
-            dispatch(sportAddNew(strSport, strSportThumb))
-        } else{
-            dispatch(sportDelete(idSport))
-        }
-        
+    const handleClick = (strSport:string, strSportThumb:string) => {
+      dispatch(sportAddNew(strSport, strSportThumb))
+  
     }
 
     const handleSport = (idSport:number) => {
@@ -39,13 +35,18 @@ export const SportsCards = ({dataSports}:tableArgs) => {
     }
     
 
-  return ( <div className="align-content-center my-3 mx-4">
-        <div className="card">
+  return ( <div className="align-content-center my-3 mx-4 ">
+        <div className="card animate__animated animate__fadeInUpBig">
           <img src={strSportThumb} className="card-img-top" alt="..." style={{height: "10rem"}}/>
           <div className="card-body">
             <h5 style={{cursor: "pointer"}}  onClick={() => handleSport(idSport)} className="card-title">{strSport}</h5>
             <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-            <animated.p style={springWidth} onClick={() => handleClick(idSport)} className='mx-4'><Like /></animated.p>
+            <div className='d-flex justify-content-center'>
+            <button style={{color:"#3b83bd", borderRadius:"12px", border:"none"}} onClick={() => handleClick(strSport, strSportThumb)} 
+            className={`btn btn-outline-info mx-3 animate__animated animate__bounceIn`}>
+              <Like />
+              </button>
+          </div>
           </div>
         </div>
       </div>

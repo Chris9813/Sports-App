@@ -23,7 +23,7 @@ export const HomeScreen = () => {
     <div className = "row row-cols-4 d-flex justify-content-center cards animate__animated animate__backInDown">
         {
         sports && sports.map((item:DataSports, i:number) => {
-            return <SportsCards dataSports={item} />
+            return <SportsCards dataSports={item} key={i} />
         })
         }
     </div>

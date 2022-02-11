@@ -11,10 +11,10 @@ class Like extends Component {
   };
   render() {
     return (
-      <div className="container">
+      <div className="">
         <div>
           <div
-            className="container"
+            className=""
             style={{ border: "none", width: "50%" }}
             onClick={() => this.toggle()}
           >

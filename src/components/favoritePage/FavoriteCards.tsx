@@ -1,31 +1,29 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { sportAddNew, sportDelete } from '../../actions/sports';
-import { DataSports, stateInter } from '../../interfaces/interfaces';
-import DisLike from '../like/DisLike';
+import { useDispatch } from 'react-redux';
+import {  startDeleting } from '../../actions/sports';
+import { favorites } from '../../interfaces/interfaces';
+
+
 
 type tableArgs = {
-    dataSports: DataSports
+    dataSports: favorites
 }
 
-export const FavoriteCards = ({dataSports}:any) => {
-
-    const {favorites}:any = useSelector((state:stateInter) => state.sports)
+export const FavoriteCards = ({dataSports}:tableArgs) => {
 
     const dispatch = useDispatch()
- 
+    
     const {name, url, id} = dataSports;
     
     
-    const handleClick = (id:any) => {
-      dispatch(sportDelete(id))
+    const handleClick = (id:string) => {
+      dispatch(startDeleting(id))
     }
     
     
     console.log(dataSports.name)
 
   return ( <div className=" container mb-3 my-5" style={{maxWidth: "600px"}}>
-  <div className="row g-0">
+  <div className="row g-0 animate__animated animate__fadeInUpBig">
     <div className="col-md-4">
       <img src={url} className="img-fluid rounded-start" alt="..." style={{height: "112px", width:"400px"}}/>
     </div>
@@ -33,7 +31,7 @@ export const FavoriteCards = ({dataSports}:any) => {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <div className='d-flex justify-content-end'>
-        <p onClick={() => handleClick(id)} className="card-text"> <DisLike /> </p>
+        <p style={{cursor: "pointer"}} onClick={() => handleClick(id)} className="card-text "> <i style={{color: "#3b83bd"}} className="fa-solid fa-heart fa-xl"></i></p>
         </div>
         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
       </div>

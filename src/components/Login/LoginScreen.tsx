@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { startGoogleLogin, startLoginEmailPaswword } from '../../actions/auth'
 import { useForm } from '../../hooks/useForm/useForm'
 
 
 export const LoginScreen = () => {
+  
     const dispatch = useDispatch()
     
     const [formValues, handleInputChange ] = useForm({
@@ -20,7 +21,7 @@ export const LoginScreen = () => {
     }
 
     const handleGoogleLogin = () => {
-      dispatch(startGoogleLogin())
+        dispatch(startGoogleLogin())
     }
 
 
@@ -68,6 +69,7 @@ return (
                             Signup Using Google
                             </button>
                             </div><br/>
+                            
                         </div>
                     </div>
                 </form>

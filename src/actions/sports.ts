@@ -33,18 +33,27 @@ const sportsfinisloading = (sports:any) => ({
         url: strSportThumb,
       }
       const doc = await db.collection(`${uid}/sports/favorite`).add( newSport );
+      dispatch(sportFinishAddNew(newSport))
     }
   }
 
-  const sportFinishAddNew = (sport:any) => ({
+  const sportFinishAddNew = (newSport:any) => ({
     type: types.SportsAdd,
-    payload: sport,
+    payload: newSport,
   });
 
-  
-  export const sportDelete = (sport:any) => ({
+
+  export const startDeleting = (id:string) => {
+    return async(dispatch:any, getState:any) => {
+        const {uid} = getState().auth;
+            await db.doc(`${uid}/sports/favorite/${id}`).delete();
+            dispatch(sportDelete(id));
+    }
+}
+
+  export const sportDelete = (id:any) => ({
     type: types.SportsDelete,
-    payload: sport,
+    payload: id,
   });
 
   export const setFavorite = (notes:any) => ({

@@ -2,6 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
   favorites:[],
+  sports:[]
 };
 
 interface actionInter {
@@ -27,7 +28,7 @@ export const sportsReducer = (state = initialState, action:actionInter) => {
     case types.SportsDelete:
       return {
         ...state,
-        favorites: state.favorites.filter((e:any) => e !== action.payload),
+        favorites: state.favorites.filter((e:any) => e.id !== action.payload),
       }
 
       case types.favoriteLoad: 
@@ -35,6 +36,7 @@ export const sportsReducer = (state = initialState, action:actionInter) => {
         ...state,
         favorites: [...action.payload]
       }
+
 
     default:
       return state;
