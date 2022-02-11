@@ -10,6 +10,8 @@ import { PublicRoute } from "./PublicRoute";
 import {firebase} from '../firebase/firebase-config'
 import { login } from "../actions/auth";
 import { LoginScreen } from "../components/Login/LoginScreen";
+import { loadFavorites } from "../helpers/loadFavorites";
+import { setFavorite } from "../actions/sports";
 
 export const AppRouter = () => {
 
@@ -24,12 +26,16 @@ export const AppRouter = () => {
             if(user?.uid) {
                 dispatch(login(user.uid, user.displayName))
                 setisLoggedIn(true)
+
+                const notes = await loadFavorites(user.uid)
+                dispatch(setFavorite(notes))
+
             } else {
                 setisLoggedIn(false)
             }
             setchecking(false)
         })
-    }, [dispatch, setchecking, setisLoggedIn])
+    }, [dispatch, setchecking, setisLoggedIn, setFavorite])
 
 
 if(checking) {

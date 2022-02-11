@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { db } from "../firebase/firebase-config";
 import { fetchSinToken } from "../helpers/fetch";
 import { types } from "../types/types";
 
@@ -22,7 +23,20 @@ const sportsfinisloading = (sports:any) => ({
 
 
 
-  export const sportAddNew = (sport:any) => ({
+  export const sportAddNew = (strSport:any, strSportThumb:any) => {
+    return async(dispatch:any, getState:any) => {
+
+      const {uid} = getState().auth
+
+      const newSport = {
+        name: strSport,
+        url: strSportThumb,
+      }
+      const doc = await db.collection(`${uid}/sports/favorite`).add( newSport );
+    }
+  }
+
+  const sportFinishAddNew = (sport:any) => ({
     type: types.SportsAdd,
     payload: sport,
   });
@@ -32,3 +46,8 @@ const sportsfinisloading = (sports:any) => ({
     type: types.SportsDelete,
     payload: sport,
   });
+
+  export const setFavorite = (notes:any) => ({
+    type: types.favoriteLoad,
+    payload: notes
+  })

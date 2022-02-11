@@ -16,15 +16,12 @@ export const FavoriteScreen = () => {
       dispatch(sportsStartLoading())
     }, [])
 
-    const data = useMemo(() => getterById(sports,favorites), [sports,favorites])
     
-
-    console.log(data)
 
   return (
     <div>
     {
-    data && data.map((item:DataSports, i:number) => {
+    favorites && favorites.map((item:any, i:number) => {
         return <FavoriteCards dataSports={item} />
     })
     }

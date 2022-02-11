@@ -30,6 +30,12 @@ export const sportsReducer = (state = initialState, action:actionInter) => {
         favorites: state.favorites.filter((e:any) => e !== action.payload),
       }
 
+      case types.favoriteLoad: 
+      return {
+        ...state,
+        favorites: [...action.payload]
+      }
+
     default:
       return state;
   }

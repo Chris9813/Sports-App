@@ -6,6 +6,7 @@ export const types = {
 
     sportsLoaded: "[Sports] Loaded Sports",
     SportsAdd: "[Sports] Add Favorite New Sport",
-    SportsDelete: "[Sports] Delete Favorite Sport"
+    SportsDelete: "[Sports] Delete Favorite Sport",
+    favoriteLoad: "[Sports] Load Favorite Sports"
 
 }
