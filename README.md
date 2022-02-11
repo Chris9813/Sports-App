@@ -2,9 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Static resources
+
+The static resources are hosting in "Docs" file and in the branch gh-pages
+
+## Application deployment
+
+You can view the application deployment in this link: https://chris9813.github.io/Sports-App/
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install or npm i`
+
+First you must install the nodes and packages with the command "npm install" or "npm i"
 
 ### `npm start`
 
